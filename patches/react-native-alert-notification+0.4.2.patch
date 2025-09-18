@@ -1,0 +1,13 @@
+diff --git a/node_modules/react-native-alert-notification/src/containers/Dialog.tsx b/node_modules/react-native-alert-notification/src/containers/Dialog.tsx
+index a6afe15..4ddd620 100644
+--- a/node_modules/react-native-alert-notification/src/containers/Dialog.tsx
++++ b/node_modules/react-native-alert-notification/src/containers/Dialog.tsx
+@@ -219,7 +219,7 @@ export class Dialog extends React.Component<IProps, IState> {
+           nativeEvent: {
+             layout: { height },
+           },
+-        }) => (this._popupHeight = height)}
++        }) => (this._popupHeight = 250)}
+         style={StyleSheet.flatten([styles.cardContainer, { transform: [{ translateY: this._positionDialog }] }])}
+       >
+         <View style={styles.backendImage} />
