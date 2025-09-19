@@ -1,15 +1,14 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { Text, View, TextInput, SafeAreaView, StyleSheet, BackHandler, TouchableOpacity, ActivityIndicator, Alert, ScrollView, RefreshControl, Button } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import axios from 'axios';
-import { useFocusEffect } from '@react-navigation/native';
-import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
-import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
-import { Inter_300Light, Inter_200ExtraLight, Inter_700Bold } from '@expo-google-fonts/inter';
-import OTPInput from "@codsod/react-native-otp-input";
-import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import { buttonColor } from '@/components/Button';
-import { ALERT_TYPE, Dialog, AlertNotificationRoot } from 'react-native-alert-notification';
+import OTPInput from "@codsod/react-native-otp-input";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useFocusEffect } from '@react-navigation/native';
+import axios from 'axios';
+import React, { useCallback, useState } from 'react';
+import { ActivityIndicator, RefreshControl, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { ALERT_TYPE, AlertNotificationRoot, Dialog } from 'react-native-alert-notification';
+import { RFPercentage } from "react-native-responsive-fontsize";
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 
 
 const Resetpassword = () => {

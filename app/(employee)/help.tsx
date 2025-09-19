@@ -1,14 +1,12 @@
-import { Text, View, SafeAreaView, ScrollView, StyleSheet, Alert, TextInput, TouchableOpacity, RefreshControl, ActivityIndicator } from 'react-native';
-import { Inter_300Light, Inter_200ExtraLight, Inter_700Bold } from '@expo-google-fonts/inter';
-import { scale, verticalScale } from 'react-native-size-matters';
-import Button from '@/components/Button';
-import axios from 'axios';
-import React, { useState, useEffect, useCallback } from 'react';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { SelectList } from 'react-native-dropdown-select-list';
-import { useFocusEffect } from '@react-navigation/native';
 import { buttonColor } from '@/components/Button';
-import { ALERT_TYPE, Dialog, AlertNotificationRoot } from 'react-native-alert-notification';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useFocusEffect } from '@react-navigation/native';
+import axios from 'axios';
+import React, { useCallback, useState } from 'react';
+import { ActivityIndicator, RefreshControl, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { ALERT_TYPE, AlertNotificationRoot, Dialog } from 'react-native-alert-notification';
+import { SelectList } from 'react-native-dropdown-select-list';
+import { scale, verticalScale } from 'react-native-size-matters';
 
 const Help = () => {
   const [issueId, setIssueId] = useState("");

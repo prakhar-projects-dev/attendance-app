@@ -1,11 +1,11 @@
 {
   "expo": {
     "name": "eAttendance",
-    "slug": "attendance",
+    "slug": "my-app",
     "version": "1.0.2",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "attendance",
+    "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
@@ -24,13 +24,15 @@
         "android.permission.USE_BIOMETRIC"
       ],
       "package": "com.vikasverma_1999.myapp",
+      "googleServicesFile": "./google-services.json",
       "config": {
         "googleMaps": {
           "apiKey": "AIzaSyAweUAuTOJmTdJsodlpSAN84kuO76LDWEY"
         }
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "softwareKeyboardLayoutMode": "pan"
     },
     "web": {
       "output": "static",
@@ -55,6 +57,12 @@
         "expo-location",
         {
           "locationAlwaysAndWhenInUsePermission": "Allow Attandance to use your location."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/images/notification-icon.png"
         }
       ],
       "expo-secure-store",

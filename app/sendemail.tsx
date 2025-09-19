@@ -6,6 +6,7 @@ import axios from 'axios';
 import * as Application from 'expo-application';
 import Constants from 'expo-constants';
 import { Platform } from 'expo-modules-core';
+import * as Notifications from 'expo-notifications';
 import { Link, useLocalSearchParams, useRouter } from "expo-router";
 import * as SecureStore from 'expo-secure-store';
 import React, { useEffect, useState } from 'react';
@@ -75,17 +76,17 @@ const Sendemail = () => {
 
 
 	const validateOtp = async () => {
-		// const { status: existingStatus } = await Notifications.getPermissionsAsync();
-		// let finalStatus = existingStatus;
-		// if (existingStatus !== 'granted') {
-		// 	await Notifications.requestPermissionsAsync();
-		// }
-		// const projectId = Constants?.expoConfig?.extra?.eas?.projectId ?? Constants?.easConfig?.projectId;
-		// const pushTokenString = (
-		// 	await Notifications.getExpoPushTokenAsync({
-		// 		projectId,
-		// 	})
-		// ).data;
+		const { status: existingStatus } = await Notifications.getPermissionsAsync();
+		let finalStatus = existingStatus;
+		if (existingStatus !== 'granted') {
+			await Notifications.requestPermissionsAsync();
+		}
+		const projectId = Constants?.expoConfig?.extra?.eas?.projectId ?? Constants?.easConfig?.projectId;
+		const pushTokenString = (
+			await Notifications.getExpoPushTokenAsync({
+				projectId,
+			})
+		).data;
 
 		setSpinner(true);
 		setError('');

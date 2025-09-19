@@ -1,11 +1,11 @@
-import { Stack } from "expo-router/stack";
-import React, {useEffect, useState} from "react";
-import { AppState } from 'react-native';
-import {StatusBar} from 'expo-status-bar';
-import * as SplashScreen from 'expo-splash-screen';
+import { Inter_300Light, useFonts } from '@expo-google-fonts/inter';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {useRouter} from 'expo-router';
-import {useFonts, Inter_300Light} from '@expo-google-fonts/inter';
+import { useRouter } from 'expo-router';
+import { Stack } from "expo-router/stack";
+import * as SplashScreen from 'expo-splash-screen';
+import { StatusBar } from 'expo-status-bar';
+import React, { useEffect, useState } from "react";
+import { AppState } from 'react-native';
 
 SplashScreen.preventAutoHideAsync();
 

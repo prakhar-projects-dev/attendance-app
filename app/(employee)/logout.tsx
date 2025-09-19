@@ -1,14 +1,14 @@
-import { View, Text, StyleSheet, Alert, ActivityIndicator, TouchableOpacity, RefreshControl, SafeAreaView, ScrollView } from 'react-native';
-import Modal from 'react-native-modal';
-import React, { useState } from 'react';
-import axios from 'axios';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useRouter } from 'expo-router';
-import { useFocusEffect } from '@react-navigation/native';
 import { buttonColor } from '@/components/Button';
-import { ALERT_TYPE, Dialog, AlertNotificationRoot } from 'react-native-alert-notification';
-import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
-import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useFocusEffect } from '@react-navigation/native';
+import axios from 'axios';
+import { useRouter } from 'expo-router';
+import React, { useState } from 'react';
+import { ActivityIndicator, RefreshControl, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { ALERT_TYPE, AlertNotificationRoot, Dialog } from 'react-native-alert-notification';
+import Modal from 'react-native-modal';
+import { RFValue } from "react-native-responsive-fontsize";
+import { moderateScale, verticalScale } from 'react-native-size-matters';
 
 const Logout = () => {
   const [refreshing, setRefreshing] = useState(false);

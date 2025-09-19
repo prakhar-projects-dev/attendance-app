@@ -1,24 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import { Text, View, TextInput, SafeAreaView, StyleSheet, BackHandler, TouchableOpacity, ActivityIndicator, Alert, ScrollView, RefreshControl, Button } from 'react-native';
-import Modal from 'react-native-modal';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import axios from 'axios';
-import { useFocusEffect } from '@react-navigation/native';
-import * as Location from 'expo-location';
-import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
-import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
-import * as LocalAuthentication from 'expo-local-authentication';
+import { buttonColor } from '@/components/Button';
+import OTPInput from "@codsod/react-native-otp-input";
+import AntDesign from '@expo/vector-icons/AntDesign';
+import Entypo from '@expo/vector-icons/Entypo';
 import Fontisto from '@expo/vector-icons/Fontisto';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import Entypo from '@expo/vector-icons/Entypo';
-import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
-import OTPInput from "@codsod/react-native-otp-input";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useFocusEffect } from '@react-navigation/native';
+import axios from 'axios';
+import * as LocalAuthentication from 'expo-local-authentication';
+import * as Location from 'expo-location';
+import React, { useEffect, useState } from 'react';
+import { ActivityIndicator, Alert, BackHandler, RefreshControl, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { ALERT_TYPE, AlertNotificationRoot, Dialog } from 'react-native-alert-notification';
 import { SelectList } from 'react-native-dropdown-select-list';
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
+import Modal from 'react-native-modal';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
-import { buttonColor } from '@/components/Button';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 import SwipeButton from 'rn-swipe-button';
-import AntDesign from '@expo/vector-icons/AntDesign';
-import { ALERT_TYPE, Dialog, AlertNotificationRoot } from 'react-native-alert-notification';
 
 const Dashboard = () => {
   const insets = useSafeAreaInsets();
@@ -654,7 +654,7 @@ const Dashboard = () => {
               <Text style={styles.paragraph}>Longitude : {longitude}</Text>
             </View>*/}
                 <View style={[styles.addressStyle, buttonColor]}>
-                  <Text style={[{ fontSize: RFValue(15), padding: moderateScale(2), alignItems: 'center', color: 'white' }, styles.fontStyle]} ><Text style={{ fontWeight: 'bold' }}><Entypo name="location-pin" size={moderateScale(20)} color="white" /> </Text>{authoriseLocation ? authoriseLocation : address}</Text>
+                  <Text style={[{ fontSize: RFValue(14), padding: moderateScale(2), alignItems: 'center', color: 'white' }, styles.fontStyle]} ><Text><Entypo name="location-pin" size={moderateScale(14)} color="white" /> {authoriseLocation ? authoriseLocation : address} </Text></Text>
                 </View>
               </>
             }

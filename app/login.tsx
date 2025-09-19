@@ -84,7 +84,7 @@ const Login = () => {
     // Submit using emp code and password.
     const onSubmit = () => {
         setErrors({});
- 
+
         // Validate form and get errors
         const validationErrors = validateForm();
         setSpinner(true);
@@ -117,7 +117,7 @@ const Login = () => {
                 })
                 .catch(err => {
                     setSpinner(false);
-                    
+
                     if (err.response) {
                         const error = err.response.data;
                         Dialog.show({
@@ -275,7 +275,7 @@ const Login = () => {
                 <View style={{
                     flex: 1
                 }}>
-                    <View style={{ flex: 1, marginLeft: scale(5), marginVertical: verticalScale(15) }}>
+                    <View style={{ flex: 1, marginLeft: scale(5), marginVertical: verticalScale(5) }}>
                         <Image source={require("@/assets/images/prakhar-logo.png")}
                             style={styles.logoStyle}
                         />
@@ -287,7 +287,7 @@ const Login = () => {
                         <Image source={require("@/assets/images/login-image.png")}
                             style={{
                                 width: scale(300),
-                                height: verticalScale(270)
+                                height: verticalScale(250)
                             }}
                             resizeMode="contain"
                         />

@@ -1,0 +1,24 @@
+diff --git a/node_modules/@codsod/react-native-otp-input/src/index.jsx b/node_modules/@codsod/react-native-otp-input/src/index.jsx
+index aa4b4f0..f780c92 100644
+--- a/node_modules/@codsod/react-native-otp-input/src/index.jsx
++++ b/node_modules/@codsod/react-native-otp-input/src/index.jsx
+@@ -1,13 +1,13 @@
+-import React, { useState, useRef, useEffect, useCallback, memo } from "react";
++import PropTypes from "prop-types";
++import { memo, useCallback, useEffect, useRef, useState } from "react";
+ import {
+-  View,
+-  TextInput,
+-  StyleSheet,
+   BackHandler,
+-  Platform,
+   Keyboard,
++  Platform,
++  StyleSheet,
++  TextInput,
++  View,
+ } from "react-native";
+-import PropTypes from "prop-types";
+ 
+ const OTPInput = memo(
+   ({

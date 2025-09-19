@@ -1,20 +1,20 @@
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { Drawer } from 'expo-router/Drawer';
-import { Tabs } from 'expo-router';
-import React, { useState } from 'react';
-import { useRouter } from 'expo-router';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useFocusEffect } from '@react-navigation/native';
-import { StatusBar } from 'expo-status-bar';
-import { Text, View, StyleSheet } from 'react-native';
 import Feather from '@expo/vector-icons/Feather';
-import SimpleLineIcons from '@expo/vector-icons/SimpleLineIcons';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import SimpleLineIcons from '@expo/vector-icons/SimpleLineIcons';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useFocusEffect } from '@react-navigation/native';
+import { Tabs, useRouter } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { RFValue } from "react-native-responsive-fontsize";
-import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
-
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { verticalScale } from 'react-native-size-matters';
+  
 const EmployeeRoute = () => {
+  const insets = useSafeAreaInsets();
   const [isLogin, setIsLogin] = useState(false);
   const [name, setName] = useState('');
   const router = useRouter();
@@ -53,6 +53,7 @@ const EmployeeRoute = () => {
 
   return (
     <>
+      <View style={{ flex: 1,  marginBottom: insets.bottom }}>
       <GestureHandlerRootView style={{ flex: 1, fontFamily: 'Inter_300Light' }}>
         <Tabs screenOptions={{
           tabBarActiveTintColor: '#11A13A',
@@ -65,7 +66,7 @@ const EmployeeRoute = () => {
               tabBarLabel: ({ focused, color }) => (
                 <Text
                   style={{
-                    fontSize: RFValue(10),
+                    fontSize: RFValue(9),
                     color: color,
                     fontWeight: focused ? '700' : '500', // bold when active
                   }}
@@ -93,7 +94,7 @@ const EmployeeRoute = () => {
               tabBarLabel: ({ focused, color }) => (
                 <Text
                   style={{
-                    fontSize: RFValue(10),
+                    fontSize: RFValue(9),
                     color: color,
                     fontWeight: focused ? '700' : '500', // bold when active
                   }}
@@ -122,7 +123,7 @@ const EmployeeRoute = () => {
               tabBarLabel: ({ focused, color }) => (
                 <Text
                   style={{
-                    fontSize: RFValue(10),
+                    fontSize: RFValue(9),
                     color: color,
                     fontWeight: focused ? '700' : '500', // bold when active
                   }}
@@ -151,7 +152,7 @@ const EmployeeRoute = () => {
                tabBarLabel: ({ focused, color }) => (
                 <Text
                   style={{
-                    fontSize: RFValue(10),
+                    fontSize: RFValue(9),
                     color: color,
                     fontWeight: focused ? '700' : '500', // bold when active
                   }}
@@ -181,7 +182,7 @@ const EmployeeRoute = () => {
               tabBarLabel: ({ focused, color }) => (
                 <Text
                   style={{
-                    fontSize: RFValue(10),
+                    fontSize: RFValue(9),
                     color: color,
                     fontWeight: focused ? '700' : '500', // bold when active
                   }}
@@ -210,7 +211,7 @@ const EmployeeRoute = () => {
               tabBarLabel: ({ focused, color }) => (
                 <Text
                   style={{
-                    fontSize: RFValue(10),
+                    fontSize: RFValue(9),
                     color: color,
                     fontWeight: focused ? '700' : '500', // bold when active
                   }}
@@ -235,7 +236,7 @@ const EmployeeRoute = () => {
 
         </Tabs>
       </GestureHandlerRootView>
-
+      </View>
       <StatusBar style="dark" />
 
     </>
@@ -260,7 +261,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
-    height: verticalScale(60),
+    height: verticalScale(50),
     paddingBottom: 10,
     paddingTop: 5,
     borderColor: 'white',

@@ -1,12 +1,12 @@
-import { Text, View, FlatList, StyleSheet, ScrollView, RefreshControl, Alert, ActivityIndicator } from 'react-native';
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { buttonColor } from '@/components/Button';
-import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFocusEffect } from '@react-navigation/native';
-import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { ActivityIndicator, Alert, FlatList, RefreshControl, StyleSheet, Text, View } from 'react-native';
+import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 const Attendance = () => {
     const apiUrl = process.env.EXPO_PUBLIC_API_URL;
     const [allAttendance, setAllAttendance] = useState([]);
@@ -85,13 +85,13 @@ const Attendance = () => {
                         }
                         ListHeaderComponent={
                             <View style={{ marginVertical: verticalScale(9), alignItems: 'center' }}>
-                                <Text style={{ fontWeight: 'bold', color: '#11A13A', fontSize: RFValue(20) }}>
+                                <Text style={{ fontWeight: 'bold', color: '#11A13A', fontSize: RFValue(16) }}>
                                     My Attendance!
                                 </Text>
 
                                 <View style={[buttonColor, { borderRadius: 20, paddingHorizontal: 40, padding: moderateScale(15), alignItems:'center', marginTop: 20 }]}>
-                                    <Text style={{ fontWeight: 'bold', color: '#fff', fontSize: RFValue(20) }}>
-                                        {month}
+                                    <Text style={{ fontWeight: 'bold', color: '#fff', fontSize: RFValue(16) }}>
+                                       {String(month)}
                                     </Text>
                                 </View> 
                             </View>

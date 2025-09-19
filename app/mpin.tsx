@@ -2,6 +2,7 @@ import OTPInput from "@codsod/react-native-otp-input";
 import AntDesign from '@expo/vector-icons/AntDesign';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
+import * as Notifications from 'expo-notifications';
 import { Link, useLocalSearchParams, useRouter } from "expo-router";
 import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, Alert, Button, StyleSheet, Text, View } from 'react-native';
@@ -45,17 +46,17 @@ const Mpin = () => {
 	}
 
 	const confirm = async () => {
-		// const { status: existingStatus } = await Notifications.getPermissionsAsync();
-		// let finalStatus = existingStatus;
-		// if (existingStatus !== 'granted') {
-		// 	await Notifications.requestPermissionsAsync();
-		// }
-		// const projectId = Constants?.expoConfig?.extra?.eas?.projectId ?? Constants?.easConfig?.projectId;
-		// const pushTokenString = (
-		// 	await Notifications.getExpoPushTokenAsync({
-		// 		projectId,
-		// 	})
-		// ).data;
+		const { status: existingStatus } = await Notifications.getPermissionsAsync();
+		let finalStatus = existingStatus;
+		if (existingStatus !== 'granted') {
+			await Notifications.requestPermissionsAsync();
+		}
+		const projectId = Constants?.expoConfig?.extra?.eas?.projectId ?? Constants?.easConfig?.projectId;
+		const pushTokenString = (
+			await Notifications.getExpoPushTokenAsync({
+				projectId,
+			})
+		).data;
 
 		setSpinner(true);
 		setError('');
