@@ -98,7 +98,7 @@ const Login = () => {
                 device_id: deviceId
             };
             
-            axios.post('/login', data)
+            axios.post('https://naukriyan.com/attendance/api/login', data)
                 .then(res => {
                     if (res.data) {
                         if (res.data.data.emp_code) {
@@ -125,7 +125,7 @@ const Login = () => {
                         Dialog.show({
                             type: ALERT_TYPE.DANGER,
                             title: error.message,
-                            textBody: apiUrl+" "+data,
+                            textBody: apiUrl+" "+data.emp_code+" "+data,
                             button: 'close',
                         });
                         // Alert.alert(error.message, 'Please check your credentials.');
@@ -137,7 +137,7 @@ const Login = () => {
                         Dialog.show({
                             type: ALERT_TYPE.DANGER,
                             title: err.message,
-                            textBody: apiUrl+" "+data.emp_code+" "+data.password,
+                            textBody: apiUrl+" "+data.emp_code+" "+data,
                             button: 'close',
                         });
                         setErrors({
@@ -205,7 +205,7 @@ const Login = () => {
                     Dialog.show({
                         type: ALERT_TYPE.DANGER,
                         title: error.message,
-                        textBody: 'Please check your mpin.',
+                        textBody: apiUrl,
                         button: 'close',
                     });
                     // Alert.alert(error.message, 'Please check your mpin.');
@@ -215,7 +215,7 @@ const Login = () => {
                     Dialog.show({
                         type: ALERT_TYPE.DANGER,
                         title: 'error',
-                        textBody: err.message,
+                        textBody: apiUrl+" "+process.env.EXPO_PUBLIC_API_URL,
                         button: 'close',
                     });
                     // Alert.alert(err.message);

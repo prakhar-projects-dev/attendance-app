@@ -93,7 +93,7 @@ export default {
       eas: {
         projectId: "6fa7c95d-469b-4f09-a6be-7eaf8a3f9ea4"
       },
-      EXPO_PUBLIC_API_URL: process.env.EXPO_PUBLIC_API_URL,
+      EXPO_PUBLIC_API_URL: process.env.EXPO_PUBLIC_API_URL || "https://naukriyan.com/attendance/api",
     }
   }
 };
