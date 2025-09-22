@@ -98,12 +98,14 @@ const Attendance = () => {
                         }
                     />
 
-                    {allAttendance.length === 0 && <>
+                    {allAttendance.length === 0 && (
+                    <>
                     
                     <View style={{ alignItems: 'center', marginVertical:verticalScale(20) }} >
                         <Text style={{color : 'red', fontSize: RFValue(15)}}>No attendance records found for this month.</Text>
                     </View>
-                    </>}
+                    </>
+                    )}
 
                 </>}
             </SafeAreaView >

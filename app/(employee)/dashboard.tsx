@@ -697,7 +697,7 @@ const Dashboard = () => {
                   <Text style={styles.cardLabel}>Status!</Text>
                   <View style={styles.checkCard}>
                     <Text style={[styles.paragraph, styles.fontStyle]}>
-                      {checkInStatus.status === 'Checked In' ? <Text style={{ color: '#11A13A', fontWeight: 'bold' }}><AntDesign name="checkcircle" size={moderateScale(15)} color="#11A13A" /> Success</Text> : checkInStatus.status === 'Pending' ? <Text style={{ color: 'orange' }}><AntDesign name="clockcircleo" size={24} color="orange" /> {checkInStatus.status}</Text> : checkInStatus.status === 'Rejected' && <Text style={{ color: 'red' }}>{checkInStatus.status}</Text>} </Text>
+                      {checkInStatus.status === 'Checked In' ? <Text style={{ color: '#11A13A', fontWeight: 'bold' }}><AntDesign name="check-circle" size={moderateScale(15)} color="#11A13A" /> Success</Text> : checkInStatus.status === 'Pending' ? <Text style={{ color: 'orange' }}><AntDesign name="clockcircleo" size={24} color="orange" /> {checkInStatus.status}</Text> : checkInStatus.status === 'Rejected' && <Text style={{ color: 'red' }}>{checkInStatus.status}</Text>} </Text>
                   </View>
                 </View>
               </View>
@@ -718,7 +718,7 @@ const Dashboard = () => {
                   <Text style={styles.cardLabel}>Status!</Text>
                   <View style={styles.checkCard}>
                     <Text style={[styles.paragraph, styles.fontStyle]}>
-                      {checkOutStatus.status === 'Checked Out' ? <Text style={{ color: '#11A13A' }}><AntDesign name="checkcircle" size={moderateScale(15)} color="#11A13A" /> Success</Text> : checkOutStatus.status === 'Pending' ? <Text style={{ color: 'orange', fontWeight: 'bold' }}><AntDesign name="clockcircle" size={moderateScale(15)} color="orange" /> {checkOutStatus.status}</Text> : checkOutStatus.status === 'Rejected' && <Text style={{ color: 'red' }}>{checkOutStatus.status}</Text>} </Text>
+                      {checkOutStatus.status === 'Checked Out' ? <Text style={{ color: '#11A13A' }}><AntDesign name="check-circle" size={moderateScale(15)} color="#11A13A" /> Success</Text> : checkOutStatus.status === 'Pending' ? <Text style={{ color: 'orange', fontWeight: 'bold' }}><AntDesign name="clockcircle" size={moderateScale(15)} color="orange" /> {checkOutStatus.status}</Text> : checkOutStatus.status === 'Rejected' && <Text style={{ color: 'red' }}>{checkOutStatus.status}</Text>} </Text>
                   </View>
                 </View>
               </View>

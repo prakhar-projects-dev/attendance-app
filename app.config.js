@@ -23,8 +23,8 @@ export default {
       permissions: [
         "android.permission.ACCESS_COARSE_LOCATION",
         "android.permission.ACCESS_FINE_LOCATION",
-        "android.permission.INTERNET",
-        "android.permission.USE_BIOMETRIC"
+        "android.permission.USE_BIOMETRIC",
+        "android.permission.ACCESS_NETWORK_STATE"
       ],
       googleServicesFile: "./google-services.json",
       config: {
@@ -92,7 +92,8 @@ export default {
       },
       eas: {
         projectId: "6fa7c95d-469b-4f09-a6be-7eaf8a3f9ea4"
-      }
+      },
+      EXPO_PUBLIC_API_URL: process.env.EXPO_PUBLIC_API_URL,
     }
   }
 };

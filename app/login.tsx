@@ -8,7 +8,7 @@ import { Platform } from 'expo-modules-core';
 import { useRouter } from 'expo-router';
 import * as SecureStore from 'expo-secure-store';
 import React, { useEffect, useRef, useState } from 'react';
-import { ActivityIndicator, Alert, BackHandler, Image, Keyboard, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { ActivityIndicator, BackHandler, Image, Keyboard, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { ALERT_TYPE, AlertNotificationRoot, Dialog } from 'react-native-alert-notification';
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -34,7 +34,8 @@ const Login = () => {
     const [credentialLogin, setCredentialLogin] = useState(true);
     const [createMpinForm, setCreateMpinForm] = useState(true);
     const [loginButtonText, setLoginButtonText] = useState('Login');
-    const apiUrl = process.env.EXPO_PUBLIC_API_URL;
+    // const apiUrl = process.env.EXPO_PUBLIC_API_URL;
+    const apiUrl = Constants.expoConfig.extra.EXPO_PUBLIC_API_URL;
     const scrollViewRef = useRef(null);
     const inputRef = useRef(null); // Ref for the TextInput
     const setToken = async (token) => {
@@ -96,7 +97,8 @@ const Login = () => {
                 'password': password,
                 device_id: deviceId
             };
-            axios.post(apiUrl + '/login', data)
+            
+            axios.post('/login', data)
                 .then(res => {
                     if (res.data) {
                         if (res.data.data.emp_code) {
@@ -123,7 +125,7 @@ const Login = () => {
                         Dialog.show({
                             type: ALERT_TYPE.DANGER,
                             title: error.message,
-                            textBody: 'Please check your credentials.',
+                            textBody: apiUrl+" "+data,
                             button: 'close',
                         });
                         // Alert.alert(error.message, 'Please check your credentials.');
@@ -132,7 +134,12 @@ const Login = () => {
                         });
                     }
                     else if (err.message) {
-                        Alert.alert(err.message);
+                        Dialog.show({
+                            type: ALERT_TYPE.DANGER,
+                            title: err.message,
+                            textBody: apiUrl+" "+data.emp_code+" "+data.password,
+                            button: 'close',
+                        });
                         setErrors({
                             'globalError': err.message
                         });
@@ -275,7 +282,7 @@ const Login = () => {
                 <View style={{
                     flex: 1
                 }}>
-                    <View style={{ flex: 1, marginLeft: scale(5), marginVertical: verticalScale(5) }}>
+                    <View style={{ flex: 1, marginLeft: scale(5), marginVertical: verticalScale(8) }}>
                         <Image source={require("@/assets/images/prakhar-logo.png")}
                             style={styles.logoStyle}
                         />
@@ -287,7 +294,7 @@ const Login = () => {
                         <Image source={require("@/assets/images/login-image.png")}
                             style={{
                                 width: scale(300),
-                                height: verticalScale(250)
+                                height: verticalScale(257)
                             }}
                             resizeMode="contain"
                         />
